@@ -1,4 +1,6 @@
-Function New-AZAdDomain{
+# create-users-and-domain.ps1
+
+Function New-ACGAdDomain{
     [CmdletBinding()]
     param (
       [Parameter(Mandatory=$True, HelpMessage='Domain name, e.g. learnsecurity.cloud')]
@@ -16,7 +18,7 @@ Function New-AZAdDomain{
     }  
 }
 
-Function New-AZDirectoryAdGroup{
+Function New-ACGDirectoryAdGroup{
     [CmdletBinding()]
     param (
       [Parameter(Mandatory=$True, HelpMessage='Domain Shortname, e.g. learnsecurity')]
@@ -38,7 +40,7 @@ Function New-AZDirectoryAdGroup{
     }  
 }
 
-Function New-AZDirectoryUserPassword{
+Function New-ACGDirectoryUserPassword{
     [CmdletBinding()]
     param (
     )
@@ -102,7 +104,7 @@ Function New-AZDirectoryUserPassword{
     $global:UserPassword = "$part1$randomnumber-$part2$randomlowercase-$part3$randomuppercase"
 }
 
-Function Add-AZDirectoryGroupMember{
+Function Add-ACGDirectoryGroupMember{
     [CmdletBinding()]
     
     param (
@@ -122,13 +124,13 @@ $domain_shortname = "learnsecurity"
 $domain_ldap      = "DC=learnsecurity,DC=cloud"
 
 # create domain
-New-AZAdDomain -domain_name $domain_name
+New-ACGAdDomain -domain_name $domain_name
 
 # create training group
-New-AZDirectoryAdGroup -domain_shortname $domain_shortname -domain_ldap $domain_ldap
+New-ACGDirectoryAdGroup -domain_shortname $domain_shortname -domain_ldap $domain_ldap
 
 # create devops group
-New-AZDirectoryAdGroup -domain_shortname $domain_shortname -domain_ldap $domain_ldap -group_name "DevOps"
+New-ACGDirectoryAdGroup -domain_shortname $domain_shortname -domain_ldap $domain_ldap -group_name "DevOps"
 
 # import users and add to AD
 
@@ -141,7 +143,7 @@ Import-Csv .\ad_users_all.csv | ForEach-Object {
     if ($result -eq $null) {
         Write-Host "Creating the user account '$name'" -ForegroundColor Yellow
         $null = $UserPassword
-        New-AZDirectoryUserPassword
+        New-ACGDirectoryUserPassword
         New-ADUser -GivenName $_.GivenName -Surname $_.Surname -Name $name -SamAccountName $sam -UserPrincipalName "$sam@$domain_name" -EmailAddress "$sam@$domain_name" -Description $_.Description -Department $_.Department -Path "CN=Users,$domain_ldap" -Enabled $true -AccountPassword (ConvertTo-SecureString $global:UserPassword -AsPlainText -force) -PasswordNeverExpires $true -ChangePasswordAtLogon $false
         $ADUser = Get-ADUser -Identity "CN=$name,CN=Users,$domain_ldap" -ErrorAction SilentlyContinue
         $UPN = $ADUser.UserPrincipalName
@@ -157,11 +159,11 @@ Import-Csv .\ad_users_all.csv | ForEach-Object {
 #join members to training group
 Import-Csv .\ad_users_training.csv | ForEach-Object {
     $sam = $_.SamAccountName
-    Add-AZDirectoryGroupMember -user_name $sam
+    Add-ACGDirectoryGroupMember -user_name $sam
 }
 
 #join members to DevOps group
 Import-Csv .\ad_users_devops.csv | ForEach-Object {
     $sam = $_.SamAccountName
-    Add-AZDirectoryGroupMember -user_name $sam -group_name "DevOps"
+    Add-ACGDirectoryGroupMember -user_name $sam -group_name "DevOps"
 }

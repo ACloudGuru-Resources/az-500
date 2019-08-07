@@ -15,6 +15,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Domain must not already be a verified domain of Azure AD or Office 365
 
 ## Create domain, users and groups
+* Copy all files within this directory to the server
 * Edit lines 122 - 124 of create-users-and-domains.ps1, see example below
 * This must exactly match your public domain name
 
@@ -22,6 +23,10 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 $domain_name      = "example.com"
 $domain_shortname = "example"
 $domain_ldap      = "DC=example,DC=com"
+```
+* run script
+```
+.\create-users-and-domain.ps1
 ```
 
 ## Install Azure AD Connect

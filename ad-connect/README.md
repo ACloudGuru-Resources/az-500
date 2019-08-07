@@ -11,7 +11,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ## Domain Requirements
 * Ownership of a registered domain, e.g. example.com
-* Ability to add domain records
+* Ability to add domain records to public DNS
 * Domain must not already be a verified domain of Azure AD or Office 365
 
 ## Create domain, users and groups

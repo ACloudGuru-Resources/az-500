@@ -1,1 +1,1 @@
-FROM jenkinsci/blueocean:1.1.5
+FROM acloudgurulabs/cloud-vote:0.0.1

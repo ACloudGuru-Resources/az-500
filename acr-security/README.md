@@ -21,5 +21,5 @@ cd acr-security
 * downloads the cloud-vote container from A Cloud Guru Labs Docker Hub
 * uploads to your Azure Container Registry
 ```
-az acr build --image acloudgurulabs/cloudvote:0.0.1 --registry YOUR-AZURE-CONTAINER-REGISTRY-NAME --file cloud-vote-0-1-0.dockerfile .
+az acr build --image cloudvote:0.1.0 --registry YOUR-AZURE-CONTAINER-REGISTRY-NAME --file cloud-vote-0-1-0.dockerfile .
 ```

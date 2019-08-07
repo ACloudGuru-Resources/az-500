@@ -1,1 +1,1 @@
-FROM acloudgurulabs/cloud-vote:0.0.1
+FROM acloudgurulabs/cloud-vote:0.1.0

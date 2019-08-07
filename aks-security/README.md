@@ -52,7 +52,7 @@ Ctrl-C to stop
 * test app
 * browse to e.g. http://13.92.117.76
 
-![Alt text](cloud-vote.png?raw=true "Cloud Vote")
+![Alt text](cloud-vote.png?raw=true "Cloud Vote App on AKS")
 
 # Acknowledgement
 * based on https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster

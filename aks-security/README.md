@@ -12,19 +12,18 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 ## Instructions
 
 ### Create Service Principal
-* Log in to Azure Portal
-* At Azure AD, App Registrations, create a new application, e.g. sp-k8 
-* Record the Application (Client) ID
-* Create and record a Client Secret
-* At Subscriptions, Role Assignments, assign the built-in ACRPull role to the service principal
-* Note - in a real production deployment, the scope should be limited to the specific Azure Container Registry 
-
-### Create AKS cluster
-* Open PowerShell (Windows) or Terminal (MacOS)
-* Log in to Azure CLI
+* Open PowerShell (Windows), Terminal (MacOS) or Azure Cloud Shell
+* Log in to Azure CLI (not needed for Azure Cloud Shell)
 ```
 az login
 ```
+* create service principal and assign role
+```
+az ad sp create-for-rbac --name sp-acr-reader --role acrpull --sdk-auth
+```
+* Copy the JSON output containing the Application (Client) ID and Client Secret 
+
+### Create AKS cluster
 * create AKS resource group
 ```
 az group create --name aks-eus-rg --location eastus
@@ -36,11 +35,6 @@ az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --ser
 ```
 
 ### Run App in AKS
-* Open PowerShell (Windows) or Terminal (MacOS)
-* Log in to Azure CLI
-```
-az login
-```
 * install kubectl if running locally (not needed in CloudShell)
 ```
 az aks install-cli

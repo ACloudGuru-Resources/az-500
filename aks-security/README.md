@@ -13,7 +13,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ### Create Service Principal
 * Log in to Azure Portal
-* At Azure AD, App Registrations, create a new application, e.g. 
+* At Azure AD, App Registrations, create a new application, e.g. sp-k8 
 * Record the Application (Client) ID
 * Create and record a Client Secret
 * At Subscriptions, Role Assignments, assign the built-in ACRPull role to the service principal

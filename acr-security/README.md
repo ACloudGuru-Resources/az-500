@@ -23,3 +23,5 @@ cd acr-security
 ```
 az acr build --image cloud-vote:0.1.0 --registry YOUR-AZURE-CONTAINER-REGISTRY-NAME --file cloud-vote-0-1-0.dockerfile .
 ```
+# Acknowledgement
+* application based on https://github.com/Azure-Samples/azure-voting-app-redis

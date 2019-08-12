@@ -10,8 +10,33 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Azure CLI
 
 ## Instructions
+
+### Create Service Principal
+* Log in to Azure Portal
+* At Azure AD, App Registrations, create a new application, e.g. 
+* Record the Application (Client) ID
+* Create and record a Client Secret
+* At Subscriptions, Role Assignments, assign the Built-in ACRPull role to the service principal
+* Note - in a real production deployment, the scope should be limited to the specific Azure Container Registry 
+
+### Create AKS cluster
 * Open PowerShell (Windows) or Terminal (MacOS)
-* Log in to Azure
+* Log in to Azure CLI
+```
+az login
+```
+* create AKS resource group
+```
+az group create --name aks-eus-rg --location eastus
+```
+* create AKS cluster - this may take around 10 minutes 
+```
+az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys
+```
+
+### Run App in AKS
+* Open PowerShell (Windows) or Terminal (MacOS)
+* Log in to Azure CLI
 ```
 az login
 ```
@@ -21,7 +46,7 @@ az aks install-cli
 ```
 * get kubectl credentials
 ```
-az aks get-credentials --resource-group YOUR-AKS-RESOURCE-GROUP --name YOUR-AKS-NAME
+az aks get-credentials --resource-group aks-eus-rg --name aks-eus-k8
 ```
 * verify connection
 ```
@@ -55,4 +80,5 @@ Ctrl-C to stop
 ![Alt text](cloud-vote.png?raw=true "Cloud Vote App on AKS")
 
 # Acknowledgement
-* based on https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster
+* lab based on https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster
+* application based on https://github.com/Azure-Samples/azure-voting-app-redis

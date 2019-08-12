@@ -29,7 +29,8 @@ az login
 ```
 az group create --name aks-eus-rg --location eastus
 ```
-* create AKS cluster - this may take around 10 minutes 
+* create AKS cluster - this may take around 10 minutes
+* replace the appID and password placeholders with the Service Principal Client ID and Client Secret in quotation marks
 ```
 az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys
 ```

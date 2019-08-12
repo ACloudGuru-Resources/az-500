@@ -35,7 +35,7 @@ az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --ser
 ```
 
 ### Run App in AKS
-* install kubectl if running locally (not needed in CloudShell)
+* install kubectl if running locally (not needed in Azure Cloud Shell)
 ```
 az aks install-cli
 ```
@@ -52,6 +52,10 @@ kubectl get nodes
 cd aks-security
 ```
 * install cloud vote already uploaded to Azure Container Registry
+* open a text editor or if in Azure Cloud Shell:
+```
+code .
+```
 * update line 51 of cloud-vote.yaml with own container registry, e.g.:
 ```
 containers:

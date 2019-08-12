@@ -16,7 +16,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * At Azure AD, App Registrations, create a new application, e.g. 
 * Record the Application (Client) ID
 * Create and record a Client Secret
-* At Subscriptions, Role Assignments, assign the Built-in ACRPull role to the service principal
+* At Subscriptions, Role Assignments, assign the built-in ACRPull role to the service principal
 * Note - in a real production deployment, the scope should be limited to the specific Azure Container Registry 
 
 ### Create AKS cluster

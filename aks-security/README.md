@@ -53,6 +53,10 @@ az aks get-credentials --resource-group aks-eus-rg --name aks-eus-k8
 ```
 kubectl get nodes
 ```
+* move in to the aks-security directory of this repository
+```
+cd aks-security
+```
 * install cloud vote already uploaded to Azure Container Registry
 * update line 51 of cloud-vote.yaml with own container registry, e.g.:
 ```
@@ -80,6 +84,13 @@ Ctrl-C to stop
 
 ![Alt text](cloud-vote.png?raw=true "Cloud Vote App on AKS")
 
-# Acknowledgement
+## Delete AKS cluster and resource group
+* Delete AKS cluster and resource group
+```
+az aks delete --name aks-eus-kg --resource-group aks-eus-rg
+az group delete --name aks-eus-rg --yes
+```
+
+## Acknowledgement
 * lab based on https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster
 * application based on https://github.com/Azure-Samples/azure-voting-app-redis

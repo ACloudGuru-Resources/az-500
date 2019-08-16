@@ -41,7 +41,7 @@ Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\CustomRoles\R
 code .
 ```
 * open ReaderSupportRole.json in Visual Studio Code
-```
+```json
 {
   "Name": "Reader",
   "Id": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
@@ -58,6 +58,58 @@ code .
   ]
 }
 ```
+
+### Edit to create custom role definition
+* edit the JSON file to add the `"Microsoft.Support/*"` operation to the `Actions` property
+* ensure you include a comma after the read operation
+* this action will allow the user to create support tickets
+* get the ID of your subscription using Azure PowerShell
+```
+Get-AzSubscription
+```
+* in `AssignableScopes`, add your subscription ID in the following format:
+```
+"/subscriptions/00000000-0000-0000-0000-000000000000"
+```
+* delete the `Id` properaty line and change the `IsCustom` property to `true`
+* change the `Name` and `Description` properties to "Reader Support Tickets" and "View everything in the subscription and also open support tickets"
+* your JSON file should like the following:
+```json
+{
+  "Name": "Reader Support Tickets",
+  "IsCustom": true,
+  "Description": "View everything in the subscription and also open support tickets.",
+  "Actions": [
+    "*/read",
+    "Microsoft.Support/*"
+  ],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/00000000-0000-0000-0000-000000000000"
+  ]
+}
+```
+### Create custom role in Azure AD
+* create new custom role using Azure PowerShell New-AzRoleDefinition command
+```
+New-AzRoleDefinition -InputFile "<PATH-TO-FOLDER>\ReaderSupportRole.json"
+```
+* the custom role can now be seen in the Azure Portal under Subscription, Roles
+
+### List custom roles
+* list custom roles using Azure PowerShell Get-AzRoleDefinition command
+```
+Get-AzRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom
+```
+
+### Test
+* assign the Reader Support Role to a user or group
+* log in as that user
+* verify that you have read access to resources in Azure
+* try and create a resource group - should fail
+* start the process of creating an Azure support ticket
 
 ## Acknowledgement
 * based on https://docs.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-powershell

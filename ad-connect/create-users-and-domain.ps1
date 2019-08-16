@@ -3,7 +3,7 @@
 Function New-ACGAdDomain{
     [CmdletBinding()]
     param (
-      [Parameter(Mandatory=$True, HelpMessage='Domain name, e.g. learnsecurity.cloud')]
+      [Parameter(Mandatory=$True, HelpMessage='Domain name, e.g. example.com')]
       [string]$domain_name
       )
        
@@ -21,9 +21,9 @@ Function New-ACGAdDomain{
 Function New-ACGDirectoryAdGroup{
     [CmdletBinding()]
     param (
-      [Parameter(Mandatory=$True, HelpMessage='Domain Shortname, e.g. learnsecurity')]
+      [Parameter(Mandatory=$True, HelpMessage='Domain Shortname, e.g. example')]
       [string]$domain_shortname,
-      [Parameter(Mandatory=$True, HelpMessage='Domain LDAP, e.g. DC=learnsecurity,DC=cloud')]
+      [Parameter(Mandatory=$True, HelpMessage='Domain LDAP, e.g. DC=example,DC=com')]
       [string]$domain_ldap,
       [Parameter(Mandatory=$False, HelpMessage='Group name, defaults to Training')]
       [string]$group_name="Training"
@@ -119,9 +119,9 @@ Function Add-ACGDirectoryGroupMember{
 }
 
 # set variables
-$domain_name      = "learnsecurity.cloud"
-$domain_shortname = "learnsecurity"
-$domain_ldap      = "DC=learnsecurity,DC=cloud"
+$domain_name      = "example.com"
+$domain_shortname = "example"
+$domain_ldap      = "DC=example,DC=com"
 
 # create domain
 New-ACGAdDomain -domain_name $domain_name

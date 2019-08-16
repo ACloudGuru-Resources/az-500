@@ -10,9 +10,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Unrestricted outbound access to Internet
 
 ## Domain Requirements
-* Ownership of a registered domain, e.g. example.com
-* Ability to add domain records to public DNS
-* Domain must not already be a verified domain of Azure AD or Office 365
+* Verified domain set to primary in Azure AD custom domains
 
 ## Create domain, users and groups
 * Copy all files within this directory to the server

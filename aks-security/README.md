@@ -91,6 +91,9 @@ kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-adm
 ```
 az aks browse --resource-group aks-eus-rg --name aks-eus-k8
 ```
+* browse to http://localhost:8001
+
+![Alt text](kube-dashboard.png?raw=true "Kubernetes Dashboard on AKS")
 
 ## Delete AKS cluster and resource group
 * Delete AKS cluster and resource group
@@ -98,9 +101,6 @@ az aks browse --resource-group aks-eus-rg --name aks-eus-k8
 az aks delete --name aks-eus-kg --resource-group aks-eus-rg
 az group delete --name aks-eus-rg --yes
 ```
-* browse to http://localhost:8001
-
-![Alt text](kube-dashboard.png?raw=true "Kubernetes Dashboard on AKS")
 
 ## Acknowledgement
 * lab based on https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster

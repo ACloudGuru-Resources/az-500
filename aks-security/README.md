@@ -84,12 +84,25 @@ Ctrl-C to stop
 
 ![Alt text](cloud-vote.png?raw=true "Cloud Vote App on AKS")
 
+## View Kubernetes dashboard
+* Authorize Kubernetes dashboard
+```
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+```
+* View Kubernetes dashboard
+```
+az aks browse --resource-group aks-eus-rg --name aks-eus-k8
+```
+
 ## Delete AKS cluster and resource group
 * Delete AKS cluster and resource group
 ```
 az aks delete --name aks-eus-kg --resource-group aks-eus-rg
 az group delete --name aks-eus-rg --yes
 ```
+* browse to http://localhost:8001
+
+![Alt text](kube-dashboard.png?raw=true "Kubernetes Dashboard on AKS")
 
 ## Acknowledgement
 * lab based on https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-deploy-cluster

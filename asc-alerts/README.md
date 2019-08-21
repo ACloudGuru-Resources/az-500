@@ -44,7 +44,7 @@ wmic /node:"localhost" process call create "cmd.exe /c copy c:\windows\system32\
 ```
 * Then enter this command:
 ```
-wmic /node:"targetcomputer" process call create "cmd.exe /c c:\job\svchost.exe"
+wmic /node:"localhost" process call create "cmd.exe /c c:\job\svchost.exe"
 ```
 
 ### Create alert 3

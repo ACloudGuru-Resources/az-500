@@ -9,8 +9,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ## Instructions
 
-## usage
-* Log in to Azure with a user registered in Azure AD
+* Log in to Azure with user registered in Azure AD
 * Virtual machines in Azure with at least 8 GB RAM
 ```
 ./disk-encrypt.ps1

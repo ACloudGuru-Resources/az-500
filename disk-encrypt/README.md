@@ -4,8 +4,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ## Requirements
 * Windows 10 or MacOS
-* Azure Cloud Shell
-* Cloud Shell code viewer 
+* Azure Cloud Shell 
 
 ## Instructions
 

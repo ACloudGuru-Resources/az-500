@@ -53,14 +53,16 @@ Usage:       disk-encrypt.ps1
                     
                     Write-Output "Encrypting virtual machines in the $resourceGroupName resource group in $location"
                     # Create Azure Key Vault for resource group disk encryption if needed
-                    $keyVaultName = $resourceGroupName + "-vault"
-                    $keyVault = Get-AzKeyVault -ResourceGroupName $resourceGroupName -VaultName $keyVaultName
-
-                    if ($keyVault.VaultName -eq $keyVaultName) {
+                    $keyVault = Get-AzKeyVault -ResourceGroupName $resourceGroupName
+                   
+                    if ($keyVault -ne $null) {
+                        $keyVaultName = $keyVault.VaultName
                         Write-Output "Azure Key Vault named $keyVaultName already exists."
 
                     } else {
-
+                        # Generate random string to ensure Key Vault name is unique
+                        $random = (-join ((65..90) + (97..122) | Get-Random -Count 5 | % {[char]$_}))
+                        $keyVaultName = $resourceGroupName + "-vault-" + $random
                         Write-Output "Creating new Azure Key Vault named $keyVaultName ..."
                         # Create new Azure Key Vault for resource group disk encryption
                         New-AzKeyVault -Location $location -ResourceGroupName $resourceGroupName -VaultName $keyVaultName -EnabledForDiskEncryption

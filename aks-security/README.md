@@ -36,8 +36,13 @@ az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --ser
 
 ### Run App in AKS
 * install kubectl if running locally (not needed in Azure Cloud Shell)
+* on Windows, in an administrator PowerShell session:
 ```
 az aks install-cli
+```
+* on MacOS in terminal:
+```
+sudo az aks install-cli
 ```
 * get kubectl credentials
 ```

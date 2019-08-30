@@ -2,9 +2,6 @@
 
 To be used in conjunction with the AZ-500 Azure Security Technologies course on A Cloud Guru.
 
-## Prerequisites
-* Azure AD Premium P1 or P2
-
 ## Requirements
 * Windows 10 or MacOS
 * Azure Cloud Shell

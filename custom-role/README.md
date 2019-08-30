@@ -9,10 +9,10 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Windows 10 or MacOS
 * Azure Cloud Shell
 
-## Instructions
-
-### Scenario
+## Scenario
 * a custom role is required to allow the user to view everything in the management plane of a subscription and also open support tickets
+
+## Instructions
 
 ### Switch to PowerShell if needed
 * If you are in the Bash Cloud Shell window, select PowerShell from the dropdown

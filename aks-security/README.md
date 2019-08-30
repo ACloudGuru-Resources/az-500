@@ -34,8 +34,7 @@ az group create --name aks-eus-rg --location eastus
 az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys
 ```
 
-### Run App in AKS
-* install kubectl if running locally (not needed in Azure Cloud Shell)
+### Install kubectl
 * on Windows, in an administrator PowerShell session:
 ```
 az aks install-cli
@@ -44,6 +43,8 @@ az aks install-cli
 ```
 sudo az aks install-cli
 ```
+
+### Run App in AKS
 * get kubectl credentials
 ```
 az aks get-credentials --resource-group aks-eus-rg --name aks-eus-k8

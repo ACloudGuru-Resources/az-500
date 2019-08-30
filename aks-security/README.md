@@ -12,8 +12,8 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 ## Instructions
 
 ### Create Service Principal
-* Open PowerShell (Windows), Terminal (MacOS) or Azure Cloud Shell
-* Log in to Azure CLI (not needed for Azure Cloud Shell)
+* Open PowerShell (Windows) or Terminal (MacOS)
+* Log in to Azure CLI
 ```
 az login
 ```
@@ -57,10 +57,7 @@ kubectl get nodes
 cd aks-security
 ```
 * install cloud vote already uploaded to Azure Container Registry
-* open a text editor or if in Azure Cloud Shell:
-```
-code .
-```
+* open folder in text editor, e.g. Visual Studio Code
 * update line 51 of cloud-vote.yaml with own container registry, e.g.:
 ```
 containers:

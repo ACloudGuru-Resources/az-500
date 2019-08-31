@@ -4,26 +4,15 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ## Requirements
 * Windows 10 or MacOS
-* Azure PowerShell on laptop, or use Azure Cloud Shell
-* Visual Studio Code, or use Cloud Shell code viewer 
+* Azure Cloud Shell
+
+## Scenario
+* a custom role is required to allow the user to view everything in the management plane of a subscription and also open support tickets
 
 ## Instructions
 
-### Scenario
-* a custom role is required to allow the user to view everything in the management plane of a subscription and also open support tickets
-
-### Move in to this directory (not required if using Cloud Shell)
-* move in to the custom-role directory within the repository
-```
-cd custom-role
-```
-
-### Log in to Azure (not required if using Cloud Shell)
-* Log in to Azure PowerShell
-```
-Connect-AzAccount
-```
-* enter credentials when prompted in a browser window
+### Switch to PowerShell if needed
+* If you are in the Bash Cloud Shell window, select PowerShell from the dropdown
 
 ### List Provider Operations
 * List operations for the Microsoft.Support resource provider
@@ -32,11 +21,15 @@ Get-AzProviderOperation "Microsoft.Support/*" | FT Operation, Description -AutoS
 ```
 
 ### Obtain Reader role in JSON format
+* Switch to clouddrive directory
+```
+cd $HOME\clouddrive
+```
 * Use the Get-AzRoleDefinition command to pull down the Reader role to use as a starting point
 ```
-Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File C:\CustomRoles\ReaderSupportRole.json
+Get-AzRoleDefinition -Name "Reader" | ConvertTo-Json | Out-File ReaderSupportRole.json
 ```
-* start Visual Studio Code
+* start Visual Studio Code within Cloud Shell
 ```
 code .
 ```
@@ -71,7 +64,7 @@ Get-AzSubscription
 ```
 "/subscriptions/00000000-0000-0000-0000-000000000000"
 ```
-* delete the `Id` properaty line and change the `IsCustom` property to `true`
+* delete the `Id` property line and change the `IsCustom` property to `true`
 * change the `Name` and `Description` properties to "Reader Support Tickets" and "View everything in the subscription and also open support tickets"
 * your JSON file should like the following:
 ```json
@@ -91,10 +84,12 @@ Get-AzSubscription
   ]
 }
 ```
+* save using Ctrl-S (Windows) or Command-S (MacOS)
+
 ### Create custom role in Azure AD
 * create new custom role using Azure PowerShell New-AzRoleDefinition command
 ```
-New-AzRoleDefinition -InputFile "<PATH-TO-FOLDER>\ReaderSupportRole.json"
+New-AzRoleDefinition -InputFile "ReaderSupportRole.json"
 ```
 * the custom role can now be seen in the Azure Portal under Subscription, Roles
 

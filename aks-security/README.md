@@ -12,8 +12,8 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 ## Instructions
 
 ### Create Service Principal
-* Open PowerShell (Windows), Terminal (MacOS) or Azure Cloud Shell
-* Log in to Azure CLI (not needed for Azure Cloud Shell)
+* Open PowerShell (Windows) or Terminal (MacOS)
+* Log in to Azure CLI
 ```
 az login
 ```
@@ -34,8 +34,7 @@ az group create --name aks-eus-rg --location eastus
 az aks create --resource-group aks-eus-rg --name aks-eus-k8 --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys
 ```
 
-### Run App in AKS
-* install kubectl if running locally (not needed in Azure Cloud Shell)
+### Install kubectl
 * on Windows, in an administrator PowerShell session:
 ```
 az aks install-cli
@@ -44,6 +43,8 @@ az aks install-cli
 ```
 sudo az aks install-cli
 ```
+
+### Run App in AKS
 * get kubectl credentials
 ```
 az aks get-credentials --resource-group aks-eus-rg --name aks-eus-k8
@@ -57,10 +58,7 @@ kubectl get nodes
 cd aks-security
 ```
 * install cloud vote already uploaded to Azure Container Registry
-* open a text editor or if in Azure Cloud Shell:
-```
-code .
-```
+* open folder in text editor, e.g. Visual Studio Code
 * update line 51 of cloud-vote.yaml with own container registry, e.g.:
 ```
 containers:

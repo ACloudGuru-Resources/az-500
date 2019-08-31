@@ -98,6 +98,8 @@ New-AzRoleDefinition -InputFile "<PATH-TO-FOLDER>\ReaderSupportRole.json"
 ```
 * the custom role can now be seen in the Azure Portal under Subscription, Roles
 
+![Alt text](custom-role.png?raw=true "Custom Resource Role")
+
 ### List custom roles
 * list custom roles using Azure PowerShell Get-AzRoleDefinition command
 ```

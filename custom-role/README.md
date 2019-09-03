@@ -102,11 +102,12 @@ Get-AzRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom
 ```
 
 ### Test
-* assign the Reader Support Role to a user or group
-* log in as that user
-* verify that you have read access to resources in Azure
-* try and create a resource group - should fail
-* start the process of creating an Azure support ticket
+* as a subscription owner, assign the Reader built-in role to a test user
+* log in as the test user in a separate browser
+* verify that the test user has read access to resources in Azure
+* as the test user, try to create a support ticket for a service limit increase - should fail
+* as the subscription owner, remove the Reader role from the user and assign the Reader Support Role
+* as the test user, start the process of creating an Azure support ticket - should now succeed
 
 ## Acknowledgement
 * based on https://docs.microsoft.com/en-us/azure/role-based-access-control/tutorial-custom-role-powershell

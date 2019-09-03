@@ -106,7 +106,7 @@ Get-AzRoleDefinition | ? {$_.IsCustom -eq $true} | FT Name, IsCustom
 * log in as the test user in a separate browser
 * verify that the test user has read access to resources in Azure
 * as the test user, try to create a support ticket for a service limit increase - should fail
-* as the subscription owner, remove the Reader role from the user and assign the Reader Support Role
+* as the subscription owner, remove the Reader role from the user, and assign the Reader Support Role
 * as the test user, start the process of creating an Azure support ticket - should now succeed
 
 ## Acknowledgement

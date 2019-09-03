@@ -91,7 +91,7 @@ Get-AzSubscription
 ```
 New-AzRoleDefinition -InputFile "ReaderSupportRole.json"
 ```
-* the custom role can now be seen in the Azure Portal under Subscription, Roles
+* the custom role can now be seen in the Azure Portal under Subscription, Access Control, Roles
 
 ![Alt text](custom-role.png?raw=true "Custom Resource Role")
 

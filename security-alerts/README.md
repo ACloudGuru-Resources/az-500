@@ -3,24 +3,25 @@
 To be used in conjunction with the AZ-500 Azure Security Technologies course on A Cloud Guru.
 
 ## Pre-requisites
-* Completion of Log Analytics Lab
+* Completion of Security Center Lab
+* Completion of Update Management Lab
 
 ## Requirements
 * Windows 10 or MacOS
 
 ## Instructions
 
-### Enable Security Center
-* In the Azure Portal, Security Center, Getting Started, Enable
+### Check Security Center is set to Standard tier
+* In the Azure Portal, Security Center, Pricing and Settings, check standard tier is selected
 
 ### Configure data collection
 * Security Center, Pricing and Settings, Data Collection
-* Use same Log Analytics Workspace as in Log Analytics Lab
+* Check the same Log Analytics Workspace is used in Update Management lab
 * At Windows Security Events, select All Events
 
-### Set email notifications
+### Check email notifications
 * Security Center, Pricing and Settings, Email notifications
-* Enter details
+* Check details are correct
 
 ### Ensure Windows virtual machine is connected
 * Security Center, Compute & Apps

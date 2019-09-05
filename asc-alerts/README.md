@@ -3,7 +3,7 @@
 To be used in conjunction with the AZ-500 Azure Security Technologies course on A Cloud Guru.
 
 ## Pre-requisites
-* Completion of Azure NSG Lab
+* Completion of Log Analytics Lab
 
 ## Requirements
 * Windows 10 or MacOS
@@ -15,6 +15,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ### Configure data collection
 * Security Center, Pricing and Settings, Data Collection
+* Use same Log Analytics Workspace as in Log Analytics Lab
 * At Windows Security Events, select All Events
 
 ### Set email notifications

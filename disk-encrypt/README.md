@@ -44,5 +44,5 @@ cd az-500/disk-encrypt
 
 ### Shut down machines
 
-* You will need your virtual machines for a later lab
+* You will need your virtual machines and key vault for later labs
 * Once encryption is complete, shut down the virtual machines to minimize cost

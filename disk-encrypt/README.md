@@ -41,6 +41,10 @@ cd az-500/disk-encrypt
 ```
 * Confirm encryption of virtual machines when prompted
 * Encryption can take up to 15 minutes per virtual machine
+* Once complete, view virtual machine disk status
+* Disks should be shown as encrypted
+
+![Alt text](disk-encrypt.png?raw=true "Azure Disk Encryption")
 
 ### Shut down machines
 

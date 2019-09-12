@@ -12,7 +12,7 @@ Usage:       disk-encrypt.ps1
 
     # Get context of logged in user for later use in Key Vault policies
     $signedInUser = az ad signed-in-user show | ConvertFrom-json
-    $userId       = $signedInUser.-UserPrincipalName
+    $userId       = $signedInUser.userPrincipalName
 
     # Search Subscriptions and resource groups for virtual machines to encrypt
     Get-AzSubscription | ForEach-Object {

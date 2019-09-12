@@ -32,8 +32,14 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Check for alert for the Windows Machine "Endpoint Protection not installed on Azure VMs"
 * If this alert is seen, go into alert details and select Install
 
-### Create alert 1
+### Connect to Windows virtual machine and change settings
 * RDP to Windows Azure virtual machine
+* Open Server Manager, Local Server
+* Change IE Enhanced Security Configuration to Off for users and administrators
+* Refresh to ensure setting is saved 
+
+### Create alert 1
+* open a new Internet Explorer browser session
 * browse to https://telegram.org/ 
 * download and install Telegram Messenger
 * launch Telegram
@@ -52,10 +58,10 @@ wmic /node:"localhost" process call create "cmd.exe /c c:\job\svchost.exe"
 ### Create alert 3
 * On the Windows Azure virtual machine, Browse to https://github.com/gentilkiwi/mimikatz
 * Select Releases
-* Attempt to download the latest mimikatz_trunk.zip
+* Attempt to download and open the latest mimikatz_trunk.zip
 * This should be blocked by Microsoft Antimalware
 
-### View security alerts
+### View security alerts in Azure Security Center
 * View alerts within the Azure Portal at Security Center, Threat Protection, Security Alerts
 * It may take some time for the alerts to show in Security Center
 * High risk alerts will trigger an email which may also take some time

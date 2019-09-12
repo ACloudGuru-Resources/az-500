@@ -8,8 +8,33 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ## Instructions
 
+### Log in to Azure Portal
 * Log in to Azure with user registered in Azure AD
-* Virtual machines in Azure with at least 8 GB RAM
+* Do not use your Microsoft account
+
+### Review virtual machine memory
+* At Virtual Machines, overview, check memory
+* Memory must be at least 7 GiB
+* If not, stop machine, change type to Standard DS2 v2
+* Start all VMs you wixh to encrypt
+
+### Connect to Cloud Shell
+* Connect to Azure Cloud Shell
+* Choose the PowerShell option
+* Switch to Cloud Drive directory
+```
+cd $HOME\clouddrive
+```
+
+### Clone repository
+* Clone this repository to Cloud Drive
+```
+git clone https://github.com/ACloudGuru-Resources/az-500.git
+```
+
+### Encrypt virtual machines
+
+* Run disk encryption script
 ```
 ./disk-encrypt.ps1
 ```

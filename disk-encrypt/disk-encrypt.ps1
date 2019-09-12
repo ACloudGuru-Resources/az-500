@@ -11,9 +11,8 @@ Usage:       disk-encrypt.ps1
     # Connect-AzAccount
 
     # Get context of logged in user for later use in Key Vault policies
-    $azContext   = Get-AzContext
-    $userAccount = $azContext.Account
-    $userId      = $userAccount.Id
+    $signedInUser = az ad signed-in-user show | ConvertFrom-json
+    $userId       = $signedInUser.-UserPrincipalName
 
     # Search Subscriptions and resource groups for virtual machines to encrypt
     Get-AzSubscription | ForEach-Object {

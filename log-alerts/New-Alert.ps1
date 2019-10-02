@@ -76,8 +76,30 @@ $emailAddress = "someone@example.com"
                                 Write-Error -Message "$resourceGroupName resource group could not be created"
                             }  
                         }
-                            
+                          
+                        $receiverName = "$workspaceName-alerts-rcv"
+
+                        try {
+                            $emailreceiver = Get-AzActionGroupReceiver -ResourceGroupName $resourceGroupName -Name $receiverName -ErrorAction Stop
+                            Write-Output "$receiverName receiver already exists"
+
+                        } catch {   
+                            Write-Output "Creating email receiver $receiverName"
+                            $emailReceiver = New-AzActionGroupReceiver -Name $receiverName -EmailReceiver -EmailAddress $emailAddress 
+                        }
+
+
+                        $actionGroupName = "secopsemail"
                         $shortActionGroupName = "secopsemail"
+
+                        try {
+                            $actionGroup = Get-AzActionGroup -ResourceGroupName $resourceGroupName -Name $actionGroupName -ErrorAction Stop
+                            Write-Output "$actionGroupName action group already exists"
+
+                        } catch {
+                            Write-Output "Creating action group $actionGroupName"
+                            Set-AzActionGroup -Name $actionGroupName -ResourceGroup $resourceGroupName -ShortName $shortActionGroupName -Receiver $emailReceiver  
+                        } 
                             
                         # Create Policy Change alert rule
                             

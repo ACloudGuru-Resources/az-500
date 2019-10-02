@@ -3,7 +3,7 @@
 To be used in conjunction with the AZ-500 Azure Security Technologies course on A Cloud Guru.
 
 ## Pre-requisites
-* Completion of Log Analytics Lab
+* Completion of Activity Log Lab
 
 ## Requirements
 * Windows 10 or MacOS
@@ -66,3 +66,8 @@ code .
 ### Expected result
 * Severity 1 alerts shown within Azure Monitor, Alerts
 * email notifications
+
+![Alt text](log-alerts.png?raw=true "Azure Monitor security alerts")
+
+## Tidy Up
+* Azure Monitor, Alerts, Manage Alert Rules, delete alert rules

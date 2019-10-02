@@ -26,8 +26,8 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 cd $HOME\clouddrive
 ```
 
-### Clone repository
-* Clone this repository to Cloud Drive
+### Clone repository if needed
+* If you haven't already, clone this repository to Cloud Drive
 ```
 git clone https://github.com/ACloudGuru-Resources/az-500.git
 ```

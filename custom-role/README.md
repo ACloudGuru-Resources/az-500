@@ -66,7 +66,7 @@ Get-AzSubscription
 ```
 * delete the `Id` property line and change the `IsCustom` property to `true`
 * change the `Name` and `Description` properties to "Reader Support Tickets" and "View everything in the subscription and also open support tickets"
-* your JSON file should like the following:
+* your JSON file should look like the following:
 ```json
 {
   "Name": "Reader Support Tickets",

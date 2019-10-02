@@ -113,7 +113,7 @@ $emailAddress = "someone@example.com"
                         } else {   
                             Write-Output "Creating $ruleName alert rule"
                             
-                            $aznsActionGroup = New-AzScheduledQueryRuleAznsActionGroup -ActionGroup @("/subscriptions/$subscription/resourcegroups/$resourceGroupName/providers/microsoft.insights/actiongroups/$shortActionGroupName") -EmailSubject "$emailAddress"
+                            $aznsActionGroup = New-AzScheduledQueryRuleAznsActionGroup -ActionGroup @("/subscriptions/$subscription/resourcegroups/$resourceGroupName/providers/microsoft.insights/actiongroups/$shortActionGroupName") -EmailSubject "Azure Alert - $ruleName"
 
                             $schedule = New-AzScheduledQueryRuleSchedule -FrequencyInMinutes 15 -TimeWindowInMinutes 15
                             
@@ -141,7 +141,7 @@ $emailAddress = "someone@example.com"
                         } else {    
                             Write-Output "Creating $ruleName alert rule"
                             
-                            $aznsActionGroup = New-AzScheduledQueryRuleAznsActionGroup -ActionGroup @("/subscriptions/$subscription/resourcegroups/$resourceGroupName/providers/microsoft.insights/actiongroups/$shortActionGroupName") -EmailSubject "$emailAddress"
+                            $aznsActionGroup = New-AzScheduledQueryRuleAznsActionGroup -ActionGroup @("/subscriptions/$subscription/resourcegroups/$resourceGroupName/providers/microsoft.insights/actiongroups/$shortActionGroupName") -EmailSubject "Azure Alert - $ruleName"
 
                             $schedule = New-AzScheduledQueryRuleSchedule -FrequencyInMinutes 15 -TimeWindowInMinutes 15
                             

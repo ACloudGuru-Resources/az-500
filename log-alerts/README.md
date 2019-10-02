@@ -17,7 +17,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 ### Switch to PowerShell if needed
 * If you are in the Bash Cloud Shell window, select PowerShell from the dropdown
 
-### Edit PowerShell script with your email address
+### Switch to Clouddrive
 * Switch to clouddrive directory
 ```
 cd $HOME\clouddrive
@@ -57,7 +57,7 @@ code .
 ### Test Policy Change alert
 * In Azure Policy, select the Allowed Locations for Resource Groups policy
 * Edit the Policy Assignment to add an extra location
-* Save
+* Save the Policy Assignment
 
 ### Test Owner Assignment alert
 * At Subscriptions, Access Control, assign an Owner role to a test user

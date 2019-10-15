@@ -71,8 +71,7 @@ Usage:       disk-encrypt.ps1
                             -VaultName $keyVaultName `
                             -UserPrincipalName $userId `
                             -PermissionsToKeys get,list,create,delete `
-                            -PermissionsToSecrets get,list,set `
-                            -PermissionsToCertificates get,list,delete,create,update,managecontacts
+                            -PermissionsToSecrets get,list,set 
                     }    
 
                     # Create Azure Key Vault Key for disk encryption if needed

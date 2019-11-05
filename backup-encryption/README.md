@@ -62,7 +62,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 ### View restored disk in storage account
 * Go to your storage account, select containers
 * View the container holding details of your restored encrypted disk
-* A ndw virtual machine can be [created from this restored disk using PowerShell](https://docs.microsoft.com/en-gb/azure/backup/backup-azure-vms-automation)
+* A new virtual machine can be [created from this restored disk using PowerShell](https://docs.microsoft.com/en-gb/azure/backup/backup-azure-vms-automation)
 
 ![Alt text](restored-disk.png?raw=true "Restored Encrypted Disk")
 

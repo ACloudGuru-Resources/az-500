@@ -33,7 +33,7 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Expand the Persons tree to view sub-categories including Items
 
 ### Query database
-* Query all items in the datbase
+* Query all items in the database
 * Click on the three dots to the right of the Items or Persons bar
 * Select New SQL Query
 * Enter the text below and then press Execute Query

@@ -20,6 +20,12 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Under network, allow the frontend subnet of your VNet, Azure portal, and your own IP address
 * Create 
 
+### Configure diagnostics
+* In the Azure portal, browse to your Cosmos DB, Diagnostics settings
+* Configure to send to your existing log analytics workspace in East US
+* Select all log and metric types
+* Save
+
 ### Create sample database
 * In the Azure portal, browse to your Cosmos DB, Data Explorer
 * Select "Start with Sample"
@@ -46,6 +52,13 @@ SELECT p.firstname FROM Persons p
 ```
 
 ![Alt text](cosmos-db.png?raw=true "Azure Cosmos DB lab")
+
+### View Cosmos DB Insights
+* In the Azure Portal, go to Azure Monitor 
+* Select Insights, Cosmos DB
+* View metrics 
+
+![Alt text](cosmos-db-insights.png?raw=true "Azure Cosmos DB Insights")
 
 ## Tidy up
 * Destroy your Cosmos DB account

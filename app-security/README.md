@@ -69,7 +69,7 @@ webapp.learnsecurity.cloud.     CNAME     webapp1755804969.azurewebsites.net
 ![Alt text](app-security.png?raw=true "Azure Web App")
 
 ## Tidy up
-* Destroy by deleting the resource group
+* Destroy by deleting the webapp-rg resource group
 
 ## References and acknowledgements
 

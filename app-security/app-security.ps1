@@ -11,7 +11,7 @@ Usage:       app-security.ps1
 # Connect-AzAccount
 
 # Defines a variable for the web app repository location
-$gitrepo="https://github.com/Celidor/azure-webapp.git"
+$gitrepo="https://github.com/ACloudGuru-Resources/Course_AZ-500_Webapp.git"
 
 # Unique web app name
 $webappname="webapp$(Get-Random)"

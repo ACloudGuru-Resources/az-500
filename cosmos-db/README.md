@@ -10,6 +10,12 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 
 ## Instructions
 
+### Clone repository if needed
+* If you haven't already, clone this repository to your laptop
+```
+git clone https://github.com/ACloudGuru-Resources/az-500.git
+```
+
 ### Create Cosmos DB account
 * In the Azure portal, browse to Cosmos DB
 * Create a new Cosmos DB
@@ -26,29 +32,43 @@ To be used in conjunction with the AZ-500 Azure Security Technologies course on 
 * Select all log and metric types
 * Save
 
-### Create sample database
+### Upload sample data
 * In the Azure portal, browse to your Cosmos DB, Data Explorer
-* Select "Start with Sample"
-* A Sample Database will be created including a "Persons" container
-* Expand the Persons tree to view sub-categories including Items
+* Select New Container
+* Database Name: data
+* Container Name: acg
+* Partition Key: /Instructor
+
+### Upload data
+* In Data Explorer, at data, acg, Items, select Upload item
+* Browse to the acg.json file in the same folder as this README file
+* Press the Upload button
+* This is a sample data set with a small selection of A Cloud Guru courses
 
 ### Query database
-* Query all items in the database
-* Click on the three dots to the right of the Items or Persons bar
+* Query all items in the container
+* Click on the three dots to the right of the acg bar
 * Select New SQL Query
 * Enter the text below and then press Execute Query
+* This returns all information within this data set
 ```
 SELECT * FROM c
 ```
-* Return all information on individuals older than 30
+* Return courses with duration greater than 12 hours
 ```
-SELECT * FROM Persons p
-  WHERE p.age = >30
+SELECT * FROM c
+  WHERE c.Hours >= 12
 ```
-* Return first names ordered by age from youngest to oldest
+* Return the names of Instructors in alphabetical order by first name
 ```
-SELECT p.firstname FROM Persons p
-  ORDER BY p.age
+SELECT c.Instructor FROM acg c
+  ORDER BY c.Instructor
+```
+* Return Azure course names in alphabetical order
+```
+SELECT c.Course_Name FROM acg c
+  WHERE c.Cloud_Provider = "Azure"
+  ORDER BY c.Course_Name
 ```
 
 ![Alt text](cosmos-db.png?raw=true "Azure Cosmos DB lab")

@@ -1,0 +1,42 @@
+[
+    {
+      "Course_Name": "AWS Certified Solutions Architect Associate 2019",
+      "Instructor": "Ryan Kroonenburg",
+      "Cloud_Provider": "AWS",
+      "Lessons": 108,
+      "Hours": 12.5,
+      "id": "4cb67ab0-ba1a-0e8a-8dfc-d48472fd5766"
+    },
+    {
+      "Course_Name": "AWS Certified Solutions Solutions Architect Professional 2019",
+      "Instructor": "Scott Pletcher",
+      "Cloud_Provider": "AWS",
+      "Lessons": 123,
+      "Hours": 12,
+      "id": "cd080a05-b245-b78a-0dbe-1cb32eac3a74"
+    },
+    {
+      "Course_Name": "AZ-900 Microsoft Azure Fundamentals",
+      "Instructor": "Lars Klint",
+      "Cloud_Provider": "Azure",
+      "Lessons": 102,
+      "Hours": 4,
+      "id": "246927ec-11c6-56da-b97c-00e5ed69fd3f"
+    },
+    {
+      "Course_Name": "AZ-500 Microsoft Azure Security Technologies",
+      "Instructor": "Paul Schwarzenberger",
+      "Cloud_Provider": "Azure",
+      "Lessons": 85,
+      "Hours": 10,
+      "id": "a6297b2d-d004-8caa-bc42-a349ff046bc4"
+    },
+    {
+      "Course_Name": "Google Certified Associate Cloud Engineer 2019",
+      "Instructor": "Mattias Andersson",
+      "Cloud_Provider": "Google",
+      "Lessons": 77,
+      "Hours": 10,
+      "id": "4bf9255d-f545-4376-b097-df4ca4da9689"
+    }
+]

@@ -27,7 +27,7 @@ git clone https://github.com/ACloudGuru-Resources/az-500.git
 ### Create storage accounts with static websites
 * Run the app-security PowerShell script
 ```
-cd az-500\frontdoor-security
+cd az-500\front-door
 ./frontdoor-security.ps1
 ```
 ### View web sites in storage accounts

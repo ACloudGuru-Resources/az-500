@@ -83,11 +83,11 @@ SELECT c.Course_Name FROM acg c
 ### View Logs
 * In the Azure Portal, go to Azure Monitor, Logs 
 * Enter the search query below
-* Press Run
 ```
 search "acg"
 | where TimeGenerated > ago(60m)
 ```
+* Press Run
 * View logs
 
 ## Tidy up

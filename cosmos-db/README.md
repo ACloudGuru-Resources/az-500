@@ -80,5 +80,15 @@ SELECT c.Course_Name FROM acg c
 
 ![Alt text](cosmos-db-insights.png?raw=true "Azure Cosmos DB Insights")
 
+## View Logs
+* In the Azure Portal, go to Azure Monitor, Logs 
+* Enter the search query below
+* Press Run
+```
+search "acg"
+| where TimeGenerated > ago(60m)
+```
+* View logs
+
 ## Tidy up
 * Destroy your Cosmos DB account

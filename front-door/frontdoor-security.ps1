@@ -86,7 +86,7 @@ $storageAccountWeu = New-AzStorageAccount -ResourceGroupName $resourceGroupName 
 $ctxWeu = $storageAccountWeu.Context
 
 # Enable static web site.
-Write-Output "Enabling static web site on Storage Account $storageWeuName in East US region"
+Write-Output "Enabling static web site on Storage Account $storageWeuName in West Europe region"
 
 Enable-AzStorageStaticWebsite -IndexDocument Index.html -ErrorDocument404Path Error.html -Context $ctxWeu
 

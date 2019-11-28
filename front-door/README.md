@@ -53,7 +53,7 @@ cd az-500\front-door
 * At Backend Pools, press +
 * Give your backend pool a name, eg. apppool
 * Press Add a Backend
-* At Backend Host Type, select Custom Web Site
+* At Backend Host Type, select Custom Host
 * For Backend Host Name, enter the static website name from your first Primary Endpoint URL, e..g.:
 ```
 appauc1340966252.z24.web.core.windows.net

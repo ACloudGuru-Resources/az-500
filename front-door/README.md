@@ -113,5 +113,38 @@ global.learnsecurity.cloud.     CNAME     globalapp8459.azurefd.net
 
 ![Alt text](front-door.png?raw=true "Front Door custom domain")
 
+### Create WAF policy
+* In the Azure Portal, go to WAF policies
+* Press Add
+* Select policy for Global WAF (Front Door)
+* Use the existing frontdoor-rg resource group
+* Enter a policy name
+* Press Next: Policy settings
+* Change mode to Prevention
+* Press Next: Managed rules
+* Under managed rule set, select the default rule set and the Microsoft bot manager rule set
+* Press Next: Custom rules
+
+### Create Custom Rule
+* Add a custom rule
+* Enter a rule name
+* Assign a priority of 100
+* Set Match type to geolocation
+* Choose your own country code
+* Leave the condition as deny traffic
+* Press Add
+* Press Next: Association
+* Add a frontend host
+* Select both the Azure Front Door domain name and your custom domain name
+* Press Review and Create
+* Perss Create
+
+### Test WAF policy
+* Browse to the Azure Front Door domain
+* This should be blocked based on your source IP address
+* Repeat for your custom domain
+
+![Alt text](waf-block.png?raw=true "Traffic blocked by Azure WAF")
+
 ## Tidy up
 * Destroy by deleting the frontdoor-rg resource group

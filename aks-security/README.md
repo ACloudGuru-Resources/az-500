@@ -101,7 +101,7 @@ az aks browse --resource-group aks-eus-rg --name aks-eus-k8
 ## Delete AKS cluster and resource group
 * Delete AKS cluster and resource group
 ```
-az aks delete --name aks-eus-kg --resource-group aks-eus-rg
+az aks delete --name aks-eus-k8 --resource-group aks-eus-rg
 az group delete --name aks-eus-rg --yes
 ```
 
